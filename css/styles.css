@@ -13,7 +13,7 @@
     --danger: #dc3545;
     --warning: #ffc107;
     --info: #17a2b8;
-    
+
     /* Categorías */
     --cat-internacional: var(--primary);
     --cat-conflicto: #dc3545;
@@ -27,7 +27,7 @@
     --cat-vr: #6610f2;
     --cat-energia: #198754;
     --cat-biotech: #dc3545;
-    
+
     /* Tipografía y colores */
     --font-principal: 'Poppins', sans-serif;
     --font-secundaria: 'Inter', sans-serif;
@@ -38,7 +38,7 @@
     --sombra-tarjeta: 0 10px 20px rgba(0, 0, 0, 0.1);
     --sombra-tarjeta-hover: 0 15px 30px rgba(0, 0, 0, 0.15);
     --radio-tarjeta: 12px;
-    
+
     /* Animaciones */
     --transicion-rapida: 0.3s ease;
     --transicion-media: 0.5s ease;
@@ -581,11 +581,11 @@ footer {
         flex-wrap: nowrap;
         justify-content: space-between;
     }
-    
+
     .menu-toggle {
         display: flex;
     }
-    
+
     .menu-principal {
         position: fixed;
         top: 0;
@@ -598,22 +598,22 @@ footer {
         transition: right 0.3s ease-in-out;
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
     }
-    
+
     body.menu-open .menu-principal {
         right: 0;
     }
-    
+
     .menu-lista {
         flex-direction: column;
         gap: 1rem;
     }
-    
+
     .menu-item a {
         padding: 0.8rem 1rem;
         display: block;
         font-size: 1.1rem;
     }
-    
+
     /* Overlay para cuando el menú está abierto */
     .overlay {
         position: fixed;
@@ -627,25 +627,25 @@ footer {
         visibility: hidden;
         transition: opacity 0.3s ease-in-out;
     }
-    
+
     body.menu-open .overlay {
         opacity: 1;
         visibility: visible;
     }
-    
+
     /* Animación para el botón hamburguesa */
     body.menu-open .menu-toggle .bar:nth-child(1) {
         transform: translateY(9px) rotate(45deg);
     }
-    
+
     body.menu-open .menu-toggle .bar:nth-child(2) {
         opacity: 0;
     }
-    
+
     body.menu-open .menu-toggle .bar:nth-child(3) {
         transform: translateY(-9px) rotate(-45deg);
     }
-    
+
     /* Ajustes para el dark mode toggle en móvil */
     .dark-mode-toggle {
         position: relative;
@@ -661,7 +661,7 @@ footer {
     max-width: 400px;
     margin: 1rem auto;
   }
-  
+
   .search-container input {
     width: 100%;
     padding: 0.75rem 3rem 0.75rem 1rem;
@@ -671,19 +671,19 @@ footer {
     font-family: var(--font-secundaria);
     transition: all var(--transicion-rapida);
   }
-  
+
   body.dark .search-container input {
     background-color: var(--dark-1);
     border-color: var(--dark-0);
     color: var(--light-0);
   }
-  
+
   .search-container input:focus {
     outline: none;
     border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(41, 57, 255, 0.2);
   }
-  
+
   .search-container button {
     position: absolute;
     right: 10px;
@@ -695,7 +695,7 @@ footer {
     font-size: 1.2rem;
     cursor: pointer;
   }
-  
+
   /* 2. Sistema de Comentarios */
   .comments-section {
     margin: 3rem 0;
@@ -704,80 +704,80 @@ footer {
     border-radius: var(--radio-tarjeta);
     box-shadow: var(--sombra-tarjeta);
   }
-  
+
   body.dark .comments-section {
     background-color: var(--color-fondo-tarjeta-dark);
   }
-  
+
   .comments-section h3 {
     color: var(--primary);
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
   }
-  
+
   .comment {
     display: flex;
     margin-bottom: 1.5rem;
     padding-bottom: 1.5rem;
     border-bottom: 1px solid var(--light-2);
   }
-  
+
   body.dark .comment {
     border-bottom-color: var(--dark-0);
   }
-  
+
   .comment:last-of-type {
     border-bottom: none;
   }
-  
+
   .comment-avatar {
     flex-shrink: 0;
     margin-right: 1rem;
   }
-  
+
   .comment-avatar img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
   }
-  
+
   .comment-content {
     flex-grow: 1;
   }
-  
+
   .comment-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 0.5rem;
   }
-  
+
   .comment-header h4 {
     margin: 0;
     font-size: 1rem;
     color: var(--dark-1);
   }
-  
+
   body.dark .comment-header h4 {
     color: var(--light-0);
   }
-  
+
   .comment-header span {
     font-size: 0.8rem;
     color: var(--dark-0);
   }
-  
+
   body.dark .comment-header span {
     color: var(--light-2);
   }
-  
+
   .comment-actions {
     display: flex;
     gap: 1rem;
     margin-top: 0.5rem;
   }
-  
+
   .comment-actions button {
     background: none;
     border: none;
@@ -789,11 +789,11 @@ footer {
     align-items: center;
     gap: 0.3rem;
   }
-  
+
   .comment-form {
     margin-top: 2rem;
   }
-  
+
   .comment-form input,
   .comment-form textarea {
     width: 100%;
@@ -804,26 +804,26 @@ footer {
     background-color: var(--light-0);
     font-family: var(--font-secundaria);
   }
-  
+
   body.dark .comment-form input,
   body.dark .comment-form textarea {
     background-color: var(--dark-1);
     border-color: var(--dark-0);
     color: var(--light-0);
   }
-  
+
   .comment-form input:focus,
   .comment-form textarea:focus {
     outline: none;
     border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(41, 57, 255, 0.2);
   }
-  
+
   .comment-form textarea {
     min-height: 100px;
     resize: vertical;
   }
-  
+
   .comment-form button {
     background-color: var(--primary);
     color: white;
@@ -834,23 +834,23 @@ footer {
     font-weight: bold;
     transition: background-color var(--transicion-rapida);
   }
-  
+
   .comment-form button:hover {
     background-color: var(--primary-light);
   }
-  
+
   /* 3. Galería de Imágenes */
   .image-gallery {
     margin: 2rem 0;
   }
-  
+
   .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 1rem;
     margin-top: 1rem;
   }
-  
+
   .gallery-item {
     position: relative;
     overflow: hidden;
@@ -858,23 +858,23 @@ footer {
     cursor: pointer;
     transition: transform var(--transicion-rapida);
   }
-  
+
   .gallery-item:hover {
     transform: scale(1.05);
     z-index: 1;
   }
-  
+
   .gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform var(--transicion-rapida);
   }
-  
+
   .gallery-item:hover img {
     transform: scale(1.1);
   }
-  
+
   .gallery-overlay {
     position: fixed;
     top: 0;
@@ -887,17 +887,17 @@ footer {
     align-items: center;
     z-index: 1000;
   }
-  
+
   .gallery-overlay.active {
     display: flex;
   }
-  
+
   .gallery-overlay img {
     max-width: 90%;
     max-height: 90%;
     object-fit: contain;
   }
-  
+
   .gallery-close {
     position: absolute;
     top: 20px;
@@ -906,7 +906,7 @@ footer {
     font-size: 2rem;
     cursor: pointer;
   }
-  
+
   .gallery-nav {
     position: absolute;
     top: 50%;
@@ -915,7 +915,7 @@ footer {
     justify-content: space-between;
     padding: 0 30px;
   }
-  
+
   .gallery-nav button {
     background: rgba(255, 255, 255, 0.2);
     border: none;
@@ -930,59 +930,54 @@ footer {
     cursor: pointer;
     transition: background var(--transicion-rapida);
   }
-  
+
   .gallery-nav button:hover {
     background: rgba(255, 255, 255, 0.4);
   }
-  
+
   /* 4. Botones para Compartir */
   .share-buttons {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
     margin: 1.5rem 0;
-  }
-  
-  .share-buttons span {
+    padding: 0.5rem;
+}
+
+.share-buttons span {
     font-weight: 500;
-  }
-  
-  .share-buttons a {
+    margin-right: 1.5rem;
+}
+
+.share-buttons a {
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 36px;
-    height: 36px;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
-    color: white;
-    transition: transform var(--transicion-rapida), opacity var(--transicion-rapida);
-  }
-  
-  .share-buttons a:hover {
-    transform: translateY(-3px);
-    opacity: 0.9;
-  }
-  
+}
+
   .share-buttons .facebook {
     background-color: #1877f2;
   }
-  
+
   .share-buttons .twitter {
     background-color: #1da1f2;
   }
-  
+
   .share-buttons .whatsapp {
     background-color: #25d366;
   }
-  
+
   .share-buttons .telegram {
     background-color: #0088cc;
   }
-  
+
   .share-buttons .email {
     background-color: #ea4335;
   }
-  
+
   /* 5. Widget de Clima */
   .weather-widget {
     margin: 2rem 0;
@@ -991,93 +986,93 @@ footer {
     border-radius: var(--radio-tarjeta);
     box-shadow: var(--sombra-tarjeta);
   }
-  
+
   body.dark .weather-widget {
     background-color: var(--color-fondo-tarjeta-dark);
   }
-  
+
   .weather-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
   }
-  
+
   .weather-header h3 {
     margin: 0;
     color: var(--primary);
   }
-  
+
   .weather-header .date {
     font-size: 0.9rem;
     color: var(--dark-0);
   }
-  
+
   body.dark .weather-header .date {
     color: var(--light-2);
   }
-  
+
   .weather-content {
     display: flex;
     align-items: center;
   }
-  
+
   .weather-icon {
     font-size: 3rem;
     color: var(--primary);
     margin-right: 1.5rem;
   }
-  
+
   .weather-temp {
     flex-grow: 1;
   }
-  
+
   .weather-temp .temp {
     display: block;
     font-size: 2rem;
     font-weight: bold;
     color: var(--dark-1);
   }
-  
+
   body.dark .weather-temp .temp {
     color: var(--light-0);
   }
-  
+
   .weather-temp .description {
     font-size: 1rem;
     color: var(--dark-0);
   }
-  
+
   body.dark .weather-temp .description {
     color: var(--light-1);
   }
-  
+
   .weather-details {
     display: flex;
     gap: 1.5rem;
   }
-  
+
   .weather-details .detail {
     display: flex;
     align-items: center;
     color: var(--dark-0);
   }
-  
+
   body.dark .weather-details .detail {
     color: var(--light-1);
   }
-  
+
   .weather-details .detail i {
     margin-right: 0.3rem;
   }
-  
+
   /* 6. Modo de Lectura Nocturna */
   .reading-mode-toggle {
     display: flex;
     justify-content: center;
     margin: 1rem 0;
   }
-  
+
   #reading-mode {
     display: flex;
     align-items: center;
@@ -1090,43 +1085,43 @@ footer {
     cursor: pointer;
     transition: background-color var(--transicion-rapida);
   }
-  
+
   body.dark #reading-mode {
     background-color: var(--dark-0);
     color: var(--light-0);
   }
-  
+
   body.reading-mode {
     background-color: #f8f9fa;
     color: #333;
   }
-  
+
   body.dark.reading-mode {
     background-color: #1a1a1a;
     color: #e0e0e0;
   }
-  
+
   body.reading-mode .noticia-contenido {
     max-width: 700px;
     margin: 0 auto;
     font-size: 1.1rem;
     line-height: 1.8;
   }
-  
+
   body.reading-mode .header,
   body.reading-mode .footer,
   body.reading-mode .related-news,
   body.reading-mode .ad-banner {
     display: none;
   }
-  
+
   body.reading-mode .reading-mode-toggle {
     position: fixed;
     top: 20px;
     right: 20px;
     z-index: 100;
   }
-  
+
   /* 7. Sistema de Suscripción Premium */
   .premium-banner {
     margin: 3rem 0;
@@ -1136,12 +1131,12 @@ footer {
     color: white;
     text-align: center;
   }
-  
+
   .premium-banner h3 {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
   }
-  
+
   .premium-benefits {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -1151,17 +1146,17 @@ footer {
     list-style: none;
     text-align: left;
   }
-  
+
   .premium-benefits li {
     display: flex;
     align-items: center;
     gap: 0.5rem;
   }
-  
+
   .premium-benefits li i {
     font-size: 1.2rem;
   }
-  
+
   .premium-button {
     background-color: white;
     color: var(--primary);
@@ -1172,18 +1167,18 @@ footer {
     cursor: pointer;
     transition: transform var(--transicion-rapida), box-shadow var(--transicion-rapida);
   }
-  
+
   .premium-button:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   }
-  
+
   /* 8. Selector de Idioma */
   .language-selector {
     position: relative;
     margin-left: 1rem;
   }
-  
+
   .language-selector select {
     appearance: none;
     background-color: transparent;
@@ -1194,16 +1189,16 @@ footer {
     cursor: pointer;
     font-size: 0.9rem;
   }
-  
+
   body.dark .language-selector select {
     border-color: var(--dark-0);
   }
-  
+
   .language-selector select:focus {
     outline: none;
     border-color: var(--primary);
   }
-  
+
   .language-selector::after {
     content: '\25BC';
     font-size: 0.8rem;
@@ -1213,12 +1208,12 @@ footer {
     transform: translateY(-50%);
     pointer-events: none;
   }
-  
+
   .language-selector select option {
     background-color: var(--dark-1);
     color: var(--light-0);
   }
-  
+
   /* 9. Encuestas Interactivas */
   .poll-container {
     margin: 2rem 0;
@@ -1227,25 +1222,25 @@ footer {
     border-radius: var(--radio-tarjeta);
     box-shadow: var(--sombra-tarjeta);
   }
-  
+
   body.dark .poll-container {
     background-color: var(--color-fondo-tarjeta-dark);
   }
-  
+
   .poll-container h3 {
     color: var(--primary);
     margin-bottom: 1.5rem;
   }
-  
+
   .poll-option {
     position: relative;
     margin-bottom: 1rem;
   }
-  
+
   .poll-option input[type="radio"] {
     margin-right: 0.5rem;
   }
-  
+
   .poll-bar {
     position: absolute;
     top: 0;
@@ -1255,7 +1250,7 @@ footer {
     border-radius: 5px;
     z-index: -1;
   }
-  
+
   .poll-bar span {
     position: absolute;
     right: 10px;
@@ -1263,18 +1258,18 @@ footer {
     font-weight: bold;
     color: var(--primary);
   }
-  
+
   .poll-info {
     margin-top: 1rem;
     font-size: 0.9rem;
     color: var(--dark-0);
     text-align: right;
   }
-  
+
   body.dark .poll-info {
     color: var(--light-2);
   }
-  
+
   .poll-container button {
     background-color: var(--primary);
     color: white;
@@ -1286,11 +1281,11 @@ footer {
     margin-top: 1rem;
     transition: background-color var(--transicion-rapida);
   }
-  
+
   .poll-container button:hover {
     background-color: var(--primary-light);
   }
-  
+
   /* 10. Modo de Accesibilidad */
   .accessibility-panel {
     position: fixed;
@@ -1298,7 +1293,7 @@ footer {
     left: 20px;
     z-index: 999;
   }
-  
+
   .a11y-toggle {
     width: 50px;
     height: 50px;
@@ -1314,11 +1309,11 @@ footer {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transition: background-color var(--transicion-rapida);
   }
-  
+
   .a11y-toggle:hover {
     background-color: var(--primary-light);
   }
-  
+
   .a11y-options {
     position: absolute;
     bottom: 60px;
@@ -1330,35 +1325,35 @@ footer {
     box-shadow: var(--sombra-tarjeta);
     display: none;
   }
-  
+
   body.dark .a11y-options {
     background-color: var(--color-fondo-tarjeta-dark);
   }
-  
+
   .a11y-options.active {
     display: block;
   }
-  
+
   .a11y-option {
     margin-bottom: 1rem;
   }
-  
+
   .a11y-option label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 500;
     color: var(--dark-1);
   }
-  
+
   body.dark .a11y-option label {
     color: var(--light-0);
   }
-  
+
   .a11y-buttons {
     display: flex;
     gap: 0.5rem;
   }
-  
+
   .a11y-buttons button {
     background-color: var(--light-1);
     border: none;
@@ -1369,67 +1364,67 @@ footer {
     flex: 1;
     transition: background-color var(--transicion-rapida);
   }
-  
+
   body.dark .a11y-buttons button {
     background-color: var(--dark-0);
     color: var(--light-0);
   }
-  
+
   .a11y-buttons button:hover {
     background-color: var(--primary);
     color: white;
   }
-  
+
   body.text-larger {
     font-size: 1.2rem;
   }
-  
+
   body.text-largest {
     font-size: 1.4rem;
   }
-  
+
   body.high-contrast {
     filter: contrast(1.5);
   }
-  
+
   body.no-animations * {
     animation: none !important;
     transition: none !important;
   }
-  
+
   /* Responsive designs for all new features */
   @media (max-width: 768px) {
     .weather-content {
       flex-direction: column;
       align-items: flex-start;
     }
-    
+
     .weather-icon {
       margin-right: 0;
       margin-bottom: 1rem;
     }
-    
+
     .weather-details {
       margin-top: 1rem;
     }
-    
+
     .premium-benefits {
       grid-template-columns: 1fr;
     }
-    
+
     .gallery-grid {
       grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     }
-    
+
     .search-container {
       max-width: 100%;
     }
-    
+
     .comment-header {
       flex-direction: column;
       align-items: flex-start;
     }
-    
+
     .share-buttons {
         display: flex;
         align-items: center;
