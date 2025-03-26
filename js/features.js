@@ -239,9 +239,31 @@ function updateFavoritesSection() {
         if (favorites.includes(title)) {
             const clone = noticia.cloneNode(true);
             clone.setAttribute('data-title', title);
-            container.appendChild(clone);
             
-            // Actualizar el botón de favoritos en el clon
+            // Actualizar el tiempo de lectura
+            const content = clone.querySelector('p').textContent;
+            const readingTime = calculateReadingTime(content);
+            const timeElement = clone.querySelector('.reading-time');
+            if (!timeElement) {
+                const newTimeElement = document.createElement('div');
+                newTimeElement.className = 'reading-time';
+                newTimeElement.innerHTML = `<i class='bx bx-time'></i> ${readingTime} min de lectura`;
+                clone.querySelector('.contenido').appendChild(newTimeElement);
+            }
+            
+            // Actualizar el botón "Leer más"
+            const readMoreBtn = clone.querySelector('.read-more-btn');
+            if (!readMoreBtn) {
+                const newReadMoreBtn = document.createElement('button');
+                newReadMoreBtn.className = 'read-more-btn';
+                newReadMoreBtn.innerHTML = 'Leer más';
+                newReadMoreBtn.addEventListener('click', () => showFullArticle(clone));
+                clone.querySelector('.contenido').appendChild(newReadMoreBtn);
+            } else {
+                readMoreBtn.addEventListener('click', () => showFullArticle(clone));
+            }
+            
+            // Actualizar el botón de favoritos
             const favButton = clone.querySelector('.fav-button');
             if (favButton) {
                 favButton.classList.add('active');
@@ -249,14 +271,20 @@ function updateFavoritesSection() {
                 favButton.addEventListener('click', (e) => {
                     e.preventDefault();
                     toggleFavorite(title, favButton);
+                    
                     // Actualizar también el botón original
-                    const originalButton = document.querySelector(`.noticia:not([data-title]) h3:contains("${title}") ~ .contenido .fav-button`);
-                    if (originalButton) {
-                        originalButton.classList.remove('active');
-                        originalButton.innerHTML = '<i class="bx bx-heart"></i>';
+                    const originalNoticia = document.querySelector(`.noticia:not([data-title]) h3`);
+                    if (originalNoticia && originalNoticia.textContent === title) {
+                        const originalButton = originalNoticia.closest('.noticia').querySelector('.fav-button');
+                        if (originalButton) {
+                            originalButton.classList.remove('active');
+                            originalButton.innerHTML = '<i class="bx bx-heart"></i>';
+                        }
                     }
                 });
             }
+            
+            container.appendChild(clone);
         }
     });
 }
