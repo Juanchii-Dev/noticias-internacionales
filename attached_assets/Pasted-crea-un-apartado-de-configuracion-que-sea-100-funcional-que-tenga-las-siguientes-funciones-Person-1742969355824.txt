@@ -1,0 +1,94 @@
+crea un apartado de configuracion que sea 100% funcional que tenga las siguientes funciones:
+
+Personalización de la interfaz:
+
+
+
+Tema:Modo claro/oscuro.
+
+Paletas de colores personalizables.
+
+Fuentes y tamaños de texto ajustables.
+
+
+
+Configuración de contenido:
+
+
+
+Categorías:Seleccionar las categorías de noticias preferidas para personalizar la página principal.
+
+Ocultar o mostrar ciertas categorías.
+
+Ordenar las categorías.
+
+
+
+Notificaciones:Activar o desactivar las notificaciones de nuevas noticias.
+
+Elegir las categorías de noticias para las que se recibirán notificaciones.
+
+Configurar la frecuencia de las notificaciones.
+
+
+
+ Funcionalidades avanzadas:
+
+
+
+Filtrado de noticias:Filtrar noticias por palabras clave, fechas o fuentes.
+
+Crear filtros personalizados.
+
+Recomendaciones personalizadas:Utilizar algoritmos para recomendar noticias basadas en el historial de lectura del usuario.
+
+Permitir al usuario ajustar las preferencias de recomendación.
+
+
+
+Integración con redes sociales:Conectar cuentas de redes sociales para compartir noticias fácilmente.
+
+Mostrar contenido de redes sociales en el sitio.
+
+
+
+Accesibilidad:Opciones para ajustar el contraste, el tamaño de texto y otras configuraciones para mejorar la accesibilidad.
+
+Soporte para lectores de pantalla.
+
+
+
+Configuración de la cuenta:
+
+
+
+Perfil:Editar la información del perfil (nombre, correo electrónico, foto).
+
+Cambiar la contraseña.
+
+Historial de lectura:Ver el historial de noticias leídas.
+
+Borrar el historial de lectura.
+
+Preferencias de privacidad:Ajustar la configuración de privacidad y cookies.
+
+Gestionar los datos personales.
+
+
+
+Consideraciones técnicas:
+
+
+
+Almacenamiento de configuraciones:Utilizar cookies, almacenamiento local o una base de datos para almacenar las configuraciones del usuario.
+
+Interfaz de usuario:Crear una interfaz de usuario intuitiva y fácil de usar para el apartado de configuraciones.
+
+Utilizar componentes reutilizables y un diseño consistente.
+
+Rendimiento:Optimizar el rendimiento del apartado de configuraciones para que no afecte la velocidad de carga del sitio.
+
+Seguridad:Implementar medidas de seguridad para proteger los datos del usuario.
+
+
+
