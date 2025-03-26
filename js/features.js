@@ -130,3 +130,44 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 })
+
+// Sistema de Favoritos
+function initFavoriteSystem() {
+    const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+    
+    // Agregar botón de favoritos a cada noticia
+    document.querySelectorAll('.noticia').forEach(noticia => {
+        const title = noticia.querySelector('h3').textContent;
+        const isFavorite = favorites.includes(title);
+        
+        const favButton = document.createElement('button');
+        favButton.className = `fav-button ${isFavorite ? 'active' : ''}`;
+        favButton.innerHTML = `<i class="bx ${isFavorite ? 'bxs-heart' : 'bx-heart'}"></i>`;
+        
+        favButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            toggleFavorite(title, favButton);
+        });
+        
+        noticia.querySelector('.contenido').appendChild(favButton);
+    });
+}
+
+function toggleFavorite(title, button) {
+    let favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+    
+    if (favorites.includes(title)) {
+        favorites = favorites.filter(fav => fav !== title);
+        button.classList.remove('active');
+        button.innerHTML = '<i class="bx bx-heart"></i>';
+    } else {
+        favorites.push(title);
+        button.classList.add('active');
+        button.innerHTML = '<i class="bx bxs-heart"></i>';
+    }
+    
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+}
+
+// Inicializar sistema de favoritos cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', initFavoriteSystem);

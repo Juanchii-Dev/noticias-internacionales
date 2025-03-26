@@ -1446,3 +1446,31 @@ footer {
         margin-left: 20px;
       }
   }
+/* Estilos para el sistema de favoritos */
+.fav-button {
+    background: none;
+    border: none;
+    color: #ff4757;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: transform 0.2s ease;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.fav-button:hover {
+    transform: scale(1.2);
+}
+
+.fav-button.active {
+    color: #ff0000;
+}
+
+.fav-button i {
+    font-size: 1.5rem;
+}
+
+.noticia {
+    position: relative;
+}
