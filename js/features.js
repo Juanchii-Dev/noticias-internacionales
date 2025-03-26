@@ -371,6 +371,62 @@ function showFullArticle(noticia) {
     
     // Generar contenido completo basado en el título
     switch(title) {
+        case 'Nuevo acuerdo nuclear con Irán':
+            fullContent = `
+                <h1>${title}</h1>
+                <p class="article-meta">Por Mohammed Al-Rashid | Actualizado: 16 de Abril, 2024</p>
+                <div class="article-content">
+                    <p>En un histórico avance diplomático, las potencias mundiales han alcanzado un nuevo acuerdo nuclear con Irán, marcando un punto de inflexión en las relaciones internacionales. El acuerdo, que se produce después de meses de intensas negociaciones, establece un marco renovado para el programa nuclear iraní.</p>
+                    <h2>Puntos Clave del Acuerdo</h2>
+                    <p>El nuevo pacto incluye restricciones más estrictas sobre el enriquecimiento de uranio y un régimen de inspecciones más riguroso. A cambio, se contempla un levantamiento gradual de las sanciones económicas que han afectado a la economía iraní.</p>
+                    <h2>Reacciones Internacionales</h2>
+                    <p>La comunidad internacional ha recibido el acuerdo con cautela. Mientras algunos países lo celebran como un triunfo de la diplomacia, otros expresan preocupaciones sobre su implementación y verificación.</p>
+                    <h2>Impacto Económico</h2>
+                    <p>Los expertos anticipan que el levantamiento de sanciones podría tener un impacto significativo en el mercado energético global, con posibles fluctuaciones en los precios del petróleo.</p>
+                </div>`;
+            break;
+        case 'Lewis Hamilton renueva con Mercedes':
+            fullContent = `
+                <h1>${title}</h1>
+                <p class="article-meta">Por James Roberts | Actualizado: 14 de Abril, 2024</p>
+                <div class="article-content">
+                    <p>El siete veces campeón mundial Lewis Hamilton ha firmado una extensión de contrato con Mercedes-AMG Petronas F1 Team, poniendo fin a meses de especulaciones sobre su futuro en la Fórmula 1.</p>
+                    <h2>Detalles del Contrato</h2>
+                    <p>El nuevo acuerdo, valorado en más de 50 millones de euros por temporada, mantiene a Hamilton en Mercedes hasta finales de 2025. El contrato incluye cláusulas relacionadas con el desarrollo del coche y el papel de Hamilton en el futuro de la escudería.</p>
+                    <h2>Objetivos del Equipo</h2>
+                    <p>Mercedes y Hamilton han expresado su compromiso de luchar por el octavo título mundial del piloto británico, lo que lo convertiría en el piloto más exitoso en la historia de la F1.</p>
+                    <h2>Impacto en el Mercado</h2>
+                    <p>La renovación de Hamilton tiene importantes implicaciones para el mercado de pilotos, afectando las opciones disponibles para otros equipos y pilotos de cara a la próxima temporada.</p>
+                </div>`;
+            break;
+        case 'Usain Bolt anuncia su retiro definitivo':
+            fullContent = `
+                <h1>${title}</h1>
+                <p class="article-meta">Por Michael Johnson | Actualizado: 12 de Abril, 2024</p>
+                <div class="article-content">
+                    <p>El legendario velocista jamaicano Usain Bolt ha anunciado su retiro definitivo del atletismo, cerrando un capítulo extraordinario en la historia del deporte. El múltiple medallista olímpico ha confirmado que no volverá a competir profesionalmente.</p>
+                    <h2>Legado Deportivo</h2>
+                    <p>Bolt se retira como el hombre más rápido de la historia, manteniendo los récords mundiales en 100m (9.58s) y 200m (19.19s). Su impacto en el atletismo va más allá de las marcas, habiendo revolucionado el deporte con su carisma y personalidad única.</p>
+                    <h2>Planes Futuros</h2>
+                    <p>El atleta ha anunciado sus planes para dedicarse al desarrollo del atletismo juvenil en Jamaica y continuar con sus diversos proyectos empresariales y filantrópicos.</p>
+                    <h2>Reacciones del Mundo del Deporte</h2>
+                    <p>La comunidad atlética internacional ha reaccionado con mensajes de admiración y gratitud hacia quien es considerado el mayor velocista de todos los tiempos.</p>
+                </div>`;
+            break;
+        case 'Apple presenta su nuevo iPhone 17':
+            fullContent = `
+                <h1>${title}</h1>
+                <p class="article-meta">Por Tim Stevens | Actualizado: 16 de Abril, 2024</p>
+                <div class="article-content">
+                    <p>Apple ha presentado oficialmente el iPhone 17, su nuevo buque insignia que promete revolucionar el mercado de los smartphones con innovaciones tecnológicas sin precedentes.</p>
+                    <h2>Características Principales</h2>
+                    <p>El nuevo dispositivo cuenta con un sistema de cámara cuántica, procesador A19 Bionic con capacidades de IA avanzadas, y una pantalla Retina XDR de cuarta generación. La duración de la batería se ha extendido hasta 48 horas de uso normal.</p>
+                    <h2>Innovaciones Tecnológicas</h2>
+                    <p>Entre las novedades más destacadas se encuentra un sistema de proyección holográfica y capacidades de realidad aumentada mejoradas que permiten experiencias inmersivas nunca antes vistas en un smartphone.</p>
+                    <h2>Disponibilidad y Precio</h2>
+                    <p>El iPhone 17 estará disponible en más de 30 países a partir del próximo mes, con un precio base de 1299€ para el modelo estándar.</p>
+                </div>`;
+            break;
         case 'Nueva generación de procesadores':
             fullContent = `
                 <h1>${title}</h1>
