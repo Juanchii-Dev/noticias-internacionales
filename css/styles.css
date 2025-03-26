@@ -1477,6 +1477,23 @@ footer {
 
 .noticia {
     position: relative;
+    display: block;
+    margin-bottom: 2rem;
+    background: var(--light-0);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.dark .noticia {
+    background: var(--dark-1);
+}
+
+.noticias-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
 }
 
 .reading-time {

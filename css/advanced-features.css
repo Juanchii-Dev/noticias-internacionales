@@ -128,6 +128,16 @@ body.dark .settings-button {
   }
 }
 
+/* Asegurar visibilidad del contenido */
+.contenido {
+    padding: 1rem;
+    display: block;
+}
+
+.contenido h3 {
+    margin-bottom: 1rem;
+}
+
 /* Sistema de puntuación */
 .news-rating {
   display: flex;
