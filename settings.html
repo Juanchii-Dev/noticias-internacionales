@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración - Noticias Internacionales</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/settings.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="bx bx-news"></i>
+                    <span>Noticias Internacionales</span>
+                </a>
+            </div>
+            
+            <button class="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <nav class="menu-principal">
+                <ul class="menu-lista">
+                    <li class="menu-item"><a href="index.html">Inicio</a></li>
+                    <li class="menu-item"><a href="index.html#noticias">Noticias</a></li>
+                    <li class="menu-item"><a href="index.html#deportes">Deportes</a></li>
+                    <li class="menu-item"><a href="index.html#tecnologias">Tecnologías</a></li>
+                </ul>
+            </nav>
+            
+            <div class="dark-mode-toggle">
+                <input id="toggle-button" type="checkbox">
+                <label for="toggle-button">
+                    <div class="sun-moon"></div>
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <main class="settings-container">
+        <div class="settings-header">
+            <h1>Configuración</h1>
+            <p>Personaliza tu experiencia en Noticias Internacionales</p>
+        </div>
+
+        <nav class="settings-nav">
+            <div class="settings-nav-item active" data-section="interface">Interfaz</div>
+            <div class="settings-nav-item" data-section="content">Contenido</div>
+            <div class="settings-nav-item" data-section="notifications">Notificaciones</div>
+            <div class="settings-nav-item" data-section="accessibility">Accesibilidad</div>
+            <div class="settings-nav-item" data-section="account">Cuenta</div>
+            <div class="settings-nav-item" data-section="privacy">Privacidad</div>
+        </nav>
+
+        <div class="settings-section active" data-section="interface">
+            <div class="settings-group">
+                <h2>Tema</h2>
+                <div class="setting-item">
+                    <label class="setting-label">Modo oscuro</label>
+                    <div class="setting-control">
+                        <label class="switch">
+                            <input type="checkbox" id="theme-toggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="setting-item">
+                    <label class="setting-label">Color principal</label>
+                    <div class="setting-control">
+                        <div class="color-picker">
+                            <div class="color-option active" data-color="#2939ff" style="background-color: #2939ff"></div>
+                            <div class="color-option" data-color="#00796b" style="background-color: #00796b"></div>
+                            <div class="color-option" data-color="#c62828" style="background-color: #c62828"></div>
+                            <div class="color-option" data-color="#6200ea" style="background-color: #6200ea"></div>
+                            <div class="color-option" data-color="#f57c00" style="background-color: #f57c00"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="setting-item">
+                    <label class="setting-label">Tamaño de fuente</label>
+                    <div class="setting-control">
+                        <select id="font-size" class="settings-select">
+                            <option value="small">Pequeño</option>
+                            <option value="medium" selected>Mediano</option>
+                            <option value="large">Grande</option>
+                            <option value="extra-large">Extra grande</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="settings-section" data-section="content">
+            <div class="settings-group">
+                <h2>Categorías</h2>
+                <div class="setting-item">
+                    <label class="setting-label">Mostrar categorías</label>
+                    <div class="categories-grid">
+                        <div class="category-card">
+                            <span>Internacional</span>
+                            <label class="switch">
+                                <input type="checkbox" data-category-toggle="internacional" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="category-card">
+                            <span>Deportes</span>
+                            <label class="switch">
+                                <input type="checkbox" data-category-toggle="deportes" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="category-card">
+                            <span>Tecnología</span>
+                            <label class="switch">
+                                <input type="checkbox" data-category-toggle="tecnologia" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="category-card">
+                            <span>Economía</span>
+                            <label class="switch">
+                                <input type="checkbox" data-category-toggle="economia" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="category-card">
+                            <span>Cultura</span>
+                            <label class="switch">
+                                <input type="checkbox" data-category-toggle="cultura" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="settings-section" data-section="notifications">
+            <div class="settings-group">
+                <h2>Notificaciones</h2>
+                <div class="setting-item">
+                    <label class="setting-label">Activar notificaciones</label>
+                    <div class="setting-control">
+                        <label class="switch">
+                            <input type="checkbox" id="notifications-toggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="setting-item">
+                    <label class="setting-label">Frecuencia</label>
+                    <div class="setting-control">
+                        <select class="settings-select">
+                            <option value="realtime">Tiempo real</option>
+                            <option value="daily">Diario</option>
+                            <option value="weekly">Semanal</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="settings-section" data-section="accessibility">
+            <div class="settings-group">
+                <h2>Accesibilidad</h2>
+                <div class="setting-item">
+                    <label class="setting-label">Alto contraste</label>
+                    <div class="setting-control">
+                        <label class="switch">
+                            <input type="checkbox" id="high-contrast-toggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="setting-item">
+                    <label class="setting-label">Texto grande</label>
+                    <div class="setting-control">
+                        <label class="switch">
+                            <input type="checkbox" id="large-text-toggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="setting-item">
+                    <label class="setting-label">Reducir movimiento</label>
+                    <div class="setting-control">
+                        <label class="switch">
+                            <input type="checkbox" id="reduce-motion-toggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="settings-section" data-section="account">
+            <div class="settings-group">
+                <h2>Perfil</h2>
+                <div class="setting-item">
+                    <label class="setting-label">Nombre</label>
+                    <input type="text" class="settings-input" placeholder="Tu nombre">
+                </div>
+
+                <div class="setting-item">
+                    <label class="setting-label">Email</label>
+                    <input type="email" class="settings-input" placeholder="Tu email">
+                </div>
+
+                <div class="setting-item">
+                    <button class="settings-button">Guardar cambios</button>
+                </div>
+            </div>
+
+            <div class="settings-group">
+                <h2>Contraseña</h2>
+                <div class="setting-item">
+                    <label class="setting-label">Contraseña actual</label>
+                    <input type="password" class="settings-input">
+                </div>
+
+                <div class="setting-item">
+                    <label class="setting-label">Nueva contraseña</label>
+                    <input type="password" class="settings-input">
+                </div>
+
+                <div class="setting-item">
+                    <button class="settings-button">Cambiar contraseña</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="settings-section" data-section="privacy">
+            <div class="settings-group">
+                <h2>Privacidad</h2>
+                <div class="setting-item">
+                    <label class="setting-label">Compartir datos de uso</label>
+                    <div class="setting-control">
+                        <label class="switch">
+                            <input type="checkbox" id="share-data-toggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="setting-item">
+                    <label class="setting-label">Cookies</label>
+                    <div class="setting-control">
+                        <label class="switch">
+                            <input type="checkbox" id="cookies-toggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="setting-item">
+                    <label class="setting-label">Newsletter</label>
+                    <div class="setting-control">
+                        <label class="switch">
+                            <input type="checkbox" id="newsletter-toggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <i class="bx bx-news"></i>
+                <span>Noticias Internacionales</span>
+            </div>
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h3>Secciones</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.html#noticias">Noticias</a></li>
+                        <li><a href="index.html#deportes">Deportes</a></li>
+                        <li><a href="index.html#tecnologias">Tecnologías</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Empresa</h3>
+                    <ul>
+                        <li><a href="about-us.html">Sobre nosotros</a></li>
+                        <li><a href="contact.html">Contacto</a></li>
+                        <li><a href="privacy-policy.html">Política de privacidad</a></li>
+                        <li><a href="terms-of-use.html">Términos de uso</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/settings.js"></script>
+</body>
+</html>
