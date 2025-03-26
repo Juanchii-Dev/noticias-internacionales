@@ -324,6 +324,30 @@ function updateFavoritesSection() {
         const title = noticia.querySelector('h3').textContent;
         if (favorites.includes(title)) {
             const clone = noticia.cloneNode(true);
+            clone.setAttribute('data-title', title);
+            
+            // Reinicializar los botones y funcionalidades en el clon
+            const favButton = clone.querySelector('.fav-button');
+            if (favButton) {
+                favButton.classList.add('active');
+                favButton.innerHTML = '<i class="bx bxs-heart"></i>';
+                // Eliminar eventos anteriores
+                const newFavButton = favButton.cloneNode(true);
+                favButton.parentNode.replaceChild(newFavButton, favButton);
+                newFavButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    toggleFavorite(title, newFavButton);
+                });
+            }
+            
+            // Reinicializar el botón "Leer más"
+            const readMoreBtn = clone.querySelector('.read-more-btn');
+            if (readMoreBtn) {
+                const newReadMoreBtn = readMoreBtn.cloneNode(true);
+                readMoreBtn.parentNode.replaceChild(newReadMoreBtn, readMoreBtn);
+                newReadMoreBtn.addEventListener('click', () => showFullArticle(clone));
+            }
+            
             container.appendChild(clone);
         }
     });
@@ -335,6 +359,19 @@ function showFullArticle(noticia) {
     
     // Generar contenido completo basado en el título
     switch(title) {
+        case 'Descubrimientos en inteligencia artificial':
+            fullContent = `
+                <h1>${title}</h1>
+                <p class="article-meta">Por Sarah Chen | Actualizado: 16 de Abril, 2024</p>
+                <div class="article-content">
+                    <p>Un equipo de investigadores ha logrado un avance significativo en el campo de la inteligencia artificial, desarrollando un nuevo algoritmo capaz de aprender y adaptarse de manera más eficiente que los sistemas actuales. Este descubrimiento podría revolucionar la forma en que las máquinas aprenden y procesan información.</p>
+                    <p>El nuevo sistema, denominado "AdaptiveAI", ha demostrado una capacidad sin precedentes para resolver problemas complejos con un consumo de energía significativamente menor que los sistemas tradicionales. Los resultados han sido publicados en prestigiosas revistas científicas y han llamado la atención de importantes empresas tecnológicas.</p>
+                    <h2>Implicaciones para el Futuro</h2>
+                    <p>Los expertos sugieren que esta tecnología podría tener aplicaciones revolucionarias en campos como la medicina, la investigación climática y la exploración espacial. La capacidad del sistema para procesar grandes cantidades de datos de manera más eficiente podría acelerar significativamente el progreso en estas áreas.</p>
+                    <h2>Consideraciones Éticas</h2>
+                    <p>Sin embargo, el desarrollo también ha generado debates sobre las implicaciones éticas y la necesidad de establecer regulaciones adecuadas para el uso de sistemas de IA cada vez más avanzados.</p>
+                </div>`;
+            break;
         case 'Protestas en Francia por reforma de pensiones':
             fullContent = `
                 <h1>${title}</h1>
@@ -363,7 +400,32 @@ function showFullArticle(noticia) {
                     <p>La crisis ha generado preocupación sobre la estabilidad regional y el futuro de las relaciones entre Rusia y Occidente. Analistas sugieren que la situación podría tener importantes consecuencias para el orden geopolítico global.</p>
                 </div>`;
             break;
-        // Agregar más casos según sea necesario
+        case 'Avances en energía renovable':
+            fullContent = `
+                <h1>${title}</h1>
+                <p class="article-meta">Por María González | Actualizado: 16 de Abril, 2024</p>
+                <div class="article-content">
+                    <p>Un consorcio internacional de científicos ha anunciado un avance revolucionario en la tecnología de paneles solares, logrando una eficiencia récord del 39% en la conversión de luz solar a electricidad. Este desarrollo promete transformar el panorama de la energía renovable a nivel global.</p>
+                    <h2>Innovación Tecnológica</h2>
+                    <p>Los nuevos paneles utilizan una combinación única de materiales y una estructura de células multicapa que maximiza la captura de energía solar. Este avance podría reducir significativamente los costos de la energía solar y hacerla más accesible para comunidades en todo el mundo.</p>
+                    <h2>Impacto Ambiental</h2>
+                    <p>Se estima que la implementación masiva de esta tecnología podría reducir las emisiones de carbono en un 40% para 2030, marcando un hito importante en la lucha contra el cambio climático.</p>
+                    <p>Varios países ya han mostrado interés en adoptar esta nueva tecnología, con proyectos piloto programados para comenzar en los próximos meses.</p>
+                </div>`;
+            break;
+        case 'Crisis alimentaria global':
+            fullContent = `
+                <h1>${title}</h1>
+                <p class="article-meta">Por John Smith | Actualizado: 15 de Abril, 2024</p>
+                <div class="article-content">
+                    <p>La Organización de las Naciones Unidas para la Alimentación y la Agricultura (FAO) ha emitido una alerta sobre una creciente crisis alimentaria que afecta a múltiples regiones del mundo. El cambio climático y los conflictos geopolíticos han sido identificados como los principales factores contribuyentes.</p>
+                    <h2>Regiones Afectadas</h2>
+                    <p>Las áreas más afectadas incluyen el África subsahariana, partes de Asia meridional y algunas regiones de América Latina. Se estima que más de 250 millones de personas están en riesgo de inseguridad alimentaria severa.</p>
+                    <h2>Medidas de Respuesta</h2>
+                    <p>La comunidad internacional está movilizando recursos para abordar la crisis. Se han prometido más de $5 mil millones en ayuda de emergencia, aunque expertos señalan que se necesitará una respuesta más sostenible a largo plazo.</p>
+                    <p>Organizaciones humanitarias están implementando programas innovadores de agricultura resiliente y sistemas de distribución de alimentos más eficientes.</p>
+                </div>`;
+            break;
         default:
             fullContent = `<h1>${title}</h1><p>Contenido completo no disponible.</p>`;
     }
