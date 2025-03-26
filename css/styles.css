@@ -660,7 +660,17 @@ footer {
     position: relative;
     max-width: 400px;
     margin: 1rem auto;
-  }
+    transition: all var(--transicion-rapida);
+}
+
+.search-container input:focus {
+    width: 100%;
+    box-shadow: 0 0 15px rgba(41, 57, 255, 0.2);
+}
+
+.noticia {
+    transition: opacity var(--transicion-rapida), transform var(--transicion-rapida);
+}
 
   .search-container input {
     width: 100%;

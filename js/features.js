@@ -4,11 +4,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // 1. Buscador de Noticias
     const searchForm = document.getElementById('search-form');
     if (searchForm) {
+        const searchInput = searchForm.querySelector('input');
+        
+        searchInput.addEventListener('input', function(e) {
+            const searchTerm = this.value.toLowerCase();
+            const noticias = document.querySelectorAll('.noticia');
+            
+            noticias.forEach(noticia => {
+                const titulo = noticia.querySelector('h3').textContent.toLowerCase();
+                const contenido = noticia.querySelector('p').textContent.toLowerCase();
+                const categoria = noticia.querySelector('.categoria').textContent.toLowerCase();
+                
+                const matchesSearch = titulo.includes(searchTerm) || 
+                                    contenido.includes(searchTerm) || 
+                                    categoria.includes(searchTerm);
+                
+                noticia.style.display = matchesSearch ? 'block' : 'none';
+            });
+        });
+
         searchForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            const searchTerm = this.querySelector('input').value.toLowerCase();
-            alert(`Búsqueda de: ${searchTerm}`);
-            // Aquí iría la lógica real de búsqueda
         });
     }
 
