@@ -195,14 +195,70 @@ function toggleFavorite(title, button) {
         favorites = favorites.filter(fav => fav !== title);
         button.classList.remove('active');
         button.innerHTML = '<i class="bx bx-heart"></i>';
+        
+        // Remove from favorites section with animation
+        const favoritesContainer = document.getElementById('favoritos-container');
+        if (favoritesContainer) {
+            const articleToRemove = favoritesContainer.querySelector(`[data-title="${title}"]`);
+            if (articleToRemove) {
+                articleToRemove.style.transition = 'opacity 0.3s, transform 0.3s';
+                articleToRemove.style.opacity = '0';
+                articleToRemove.style.transform = 'scale(0.8)';
+                setTimeout(() => {
+                    articleToRemove.remove();
+                    if (favoritesContainer.children.length === 0) {
+                        favoritesContainer.innerHTML = '<p class="no-favorites">No tienes noticias favoritas guardadas.</p>';
+                    }
+                }, 300);
+            }
+        }
     } else {
         favorites.push(title);
         button.classList.add('active');
         button.innerHTML = '<i class="bx bxs-heart"></i>';
+        updateFavoritesSection();
     }
     
     localStorage.setItem('favorites', JSON.stringify(favorites));
-    updateFavoritesSection();
+}
+
+function updateFavoritesSection() {
+    const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+    const container = document.getElementById('favoritos-container');
+    if (!container) return;
+    
+    container.innerHTML = '';
+    
+    if (favorites.length === 0) {
+        container.innerHTML = '<p class="no-favorites">No tienes noticias favoritas guardadas.</p>';
+        return;
+    }
+    
+    document.querySelectorAll('.noticia').forEach(noticia => {
+        const title = noticia.querySelector('h3').textContent;
+        if (favorites.includes(title)) {
+            const clone = noticia.cloneNode(true);
+            clone.setAttribute('data-title', title);
+            container.appendChild(clone);
+            
+            // Actualizar el botón de favoritos en el clon
+            const favButton = clone.querySelector('.fav-button');
+            if (favButton) {
+                favButton.classList.add('active');
+                favButton.innerHTML = '<i class="bx bxs-heart"></i>';
+                favButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    toggleFavorite(title, favButton);
+                    // Actualizar también el botón original
+                    const originalButton = document.querySelector(`.noticia:not([data-title]) h3:contains("${title}") ~ .contenido .fav-button`);
+                    if (originalButton) {
+                        originalButton.classList.remove('active');
+                        originalButton.innerHTML = '<i class="bx bx-heart"></i>';
+                    }
+                });
+            }
+        }
+    });
 }
 
 function calculateReadingTime(text) {
