@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Nosotros - Noticias Internacionales</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    .about-container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: var(--color-fondo-tarjeta-light);
+      border-radius: var(--radio-tarjeta);
+      box-shadow: var(--sombra-tarjeta);
+    }
+    
+    body.dark .about-container {
+      background-color: var(--color-fondo-tarjeta-dark);
+    }
+    
+    .about-container h1 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      text-align: center;
+    }
+    
+    .about-container h2 {
+      color: var(--primary);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    
+    .about-container p {
+      margin-bottom: 1.2rem;
+      line-height: 1.7;
+    }
+    
+    .hero-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: var(--radio-tarjeta);
+      margin-bottom: 2rem;
+    }
+    
+    .team-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .team-member {
+      text-align: center;
+      transition: transform var(--transicion-media);
+    }
+    
+    .team-member:hover {
+      transform: translateY(-10px);
+    }
+    
+    .team-member img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 3px solid var(--primary);
+    }
+    
+    .team-member h3 {
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+    
+    .team-member p {
+      font-size: 0.9rem;
+      color: var(--dark-0);
+      margin-bottom: 0.5rem;
+    }
+    
+    body.dark .team-member p {
+      color: var(--light-1);
+    }
+    
+    .mission-values {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    
+    .mission-box, .values-box {
+      padding: 2rem;
+      border-radius: var(--radio-tarjeta);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: transform var(--transicion-media);
+    }
+    
+    .mission-box {
+      background-color: rgba(var(--primary), 0.1);
+      border-left: 4px solid var(--primary);
+    }
+    
+    .values-box {
+      background-color: rgba(var(--secondary), 0.1);
+      border-left: 4px solid var(--secondary);
+    }
+    
+    .values-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .values-list li {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    
+    .values-list li:before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--secondary);
+      font-weight: bold;
+    }
+    
+    .timeline {
+      position: relative;
+      max-width: 1000px;
+      margin: 3rem auto;
+    }
+    
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: var(--primary-light);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+      border-radius: 3px;
+    }
+    
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 1rem 2rem;
+      box-sizing: border-box;
+      margin-bottom: 2rem;
+    }
+    
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: var(--primary);
+      border-radius: 50%;
+      top: 15px;
+      z-index: 1;
+    }
+    
+    .timeline-left {
+      left: 0;
+      text-align: right;
+    }
+    
+    .timeline-right {
+      left: 50%;
+      text-align: left;
+    }
+    
+    .timeline-left::after {
+      right: -10px;
+    }
+    
+    .timeline-right::after {
+      left: -10px;
+    }
+    
+    .timeline-content {
+      padding: 1.5rem;
+      background-color: var(--color-fondo-tarjeta-light);
+      border-radius: var(--radio-tarjeta);
+      box-shadow: var(--sombra-tarjeta);
+    }
+    
+    body.dark .timeline-content {
+      background-color: var(--color-fondo-tarjeta-dark);
+    }
+    
+    .timeline-content h3 {
+      margin-top: 0;
+      color: var(--primary);
+    }
+    
+    .back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color var(--transicion-rapida);
+    }
+    
+    .back-link:hover {
+      color: var(--primary-light);
+    }
+    
+    .back-link i {
+      margin-right: 0.5rem;
+    }
+    
+    @media (max-width: 768px) {
+      .mission-values {
+        grid-template-columns: 1fr;
+      }
+      
+      .timeline::after {
+        left: 31px;
+      }
+      
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 0;
+      }
+      
+      .timeline-left, .timeline-right {
+        left: 0;
+        text-align: left;
+      }
+      
+      .timeline-left::after, .timeline-right::after {
+        left: 21px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header">
+      <div class="logo">
+        <a href="index.html">
+          <i class="bx bx-news text-3xl"></i>
+          <span class="font-poppins font-bold text-xl">Noticias Internacionales</span>
+        </a>
+      </div>
+      
+      <!-- Botón menú hamburguesa para móviles -->
+      <button class="menu-toggle" aria-label="Abrir menú">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      
+      <nav class="menu-principal">
+        <ul class="menu-lista">
+          <li class="menu-item"><a href="index.html">Inicio</a></li>
+          <li class="menu-item"><a href="index.html#noticias">Noticias</a></li>
+          <li class="menu-item"><a href="index.html#deportes">Deportes</a></li>
+          <li class="menu-item"><a href="index.html#tecnologias">Tecnologías</a></li>
+          <li class="menu-item"><a href="contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+      
+      <div class="dark-mode-toggle">
+        <input id="toggle-button" type="checkbox">
+        <label for="toggle-button">
+          <div class="sun-moon"></div>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="about-container">
+      <h1>Sobre Nosotros</h1>
+      <img src="https://images.unsplash.com/photo-1495020689067-958852a7765e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Redacción de Noticias Internacionales" class="hero-image">
+      
+      <p>
+        <strong>Noticias Internacionales</strong> es un medio de comunicación digital dedicado a proporcionar información actualizada y de calidad sobre los acontecimientos más relevantes a nivel mundial. Desde nuestra fundación en 2020, nos hemos comprometido a ofrecer un periodismo riguroso, imparcial y accesible para todos nuestros lectores.
+      </p>
+      <p>
+        Nuestro equipo está formado por periodistas y profesionales de la comunicación con amplia experiencia en el campo informativo internacional. Trabajamos diariamente para seleccionar y elaborar contenidos que ayuden a nuestros lectores a comprender mejor el mundo que les rodea.
+      </p>
+      
+      <div class="mission-values">
+        <div class="mission-box">
+          <h2>Nuestra Misión</h2>
+          <p>Proporcionar información veraz, imparcial y de calidad sobre los acontecimientos más relevantes del panorama internacional, nacional y local, contribuyendo a la formación de una sociedad más informada y crítica.</p>
+        </div>
+        
+        <div class="values-box">
+          <h2>Nuestros Valores</h2>
+          <ul class="values-list">
+            <li><strong>Veracidad:</strong> Nos comprometemos con la verdad y la precisión en todas nuestras publicaciones.</li>
+            <li><strong>Independencia:</strong> Mantenemos nuestra autonomía editorial libre de presiones externas.</li>
+            <li><strong>Responsabilidad:</strong> Asumimos la responsabilidad de nuestro trabajo periodístico.</li>
+            <li><strong>Diversidad:</strong> Valoramos y promovemos diferentes perspectivas y voces.</li>
+            <li><strong>Innovación:</strong> Buscamos constantemente nuevas formas de contar historias y conectar con nuestra audiencia.</li>
+          </ul>
+        </div>
+      </div>
+      
+      <h2>Nuestro Equipo</h2>
+      <p>Contamos con un equipo de profesionales apasionados por el periodismo y comprometidos con la excelencia informativa. Nuestros editores y redactores trabajan incansablemente para ofrecerte las noticias más relevantes con rigor y profesionalidad.</p>
+      
+      <div class="team-container">
+        <div class="team-member">
+          <img src="images/dgen.jpg" alt="Juanchi Dev">
+          <h3>Juanchi Dev</h3>
+          <p>Director General</p>
+        </div>
+        
+        <div class="team-member">
+          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Ana Martínez">
+          <h3>Ana Martínez</h3>
+          <p>Editora en Jefe</p>
+        </div>
+        
+        <div class="team-member">
+          <img src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Miguel Sánchez">
+          <h3>Miguel Sánchez</h3>
+          <p>Jefe de Redacción Internacional</p>
+        </div>
+        
+        <div class="team-member">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Laura Fernández">
+          <h3>Laura Fernández</h3>
+          <p>Editora de Deportes</p>
+        </div>
+      </div>
+      
+      <h2>Nuestra Historia</h2>
+      <div class="timeline">
+        <div class="timeline-item timeline-left">
+          <div class="timeline-content">
+            <h3>2020</h3>
+            <p>Fundación de Noticias Internacionales como un proyecto periodístico digital con la misión de proporcionar información de calidad sobre acontecimientos globales.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item timeline-right">
+          <div class="timeline-content">
+            <h3>2021</h3>
+            <p>Expansión de nuestro equipo editorial y lanzamiento de secciones especializadas en deportes, tecnología y cultura.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item timeline-left">
+          <div class="timeline-content">
+            <h3>2022</h3>
+            <p>Premio nacional al mejor medio digital emergente. Alcanzamos un millón de lectores mensuales.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item timeline-right">
+          <div class="timeline-content">
+            <h3>2023</h3>
+            <p>Lanzamiento de nuestra aplicación móvil y expansión a nuevos mercados internacionales.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item timeline-left">
+          <div class="timeline-content">
+            <h3>2024</h3>
+            <p>Renovación de nuestra plataforma digital con nuevas funcionalidades interactivas y experiencia de usuario mejorada.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item timeline-right">
+          <div class="timeline-content">
+            <h3>2025</h3>
+            <p>Celebramos 5 años de periodismo de calidad con más de 5 millones de lectores mensuales en todo el mundo.</p>
+          </div>
+        </div>
+      </div>
+      
+      <a href="index.html" class="back-link"><i class="bx bx-arrow-back"></i>Volver a la página principal</a>
+    </div>
+  </main>
+  
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <i class="bx bx-news"></i>
+        <span>Noticias Internacionales</span>
+      </div>
+      <div class="footer-links">
+        <div class="footer-section">
+          <h3>Secciones</h3>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html#noticias">Noticias</a></li>
+            <li><a href="index.html#deportes">Deportes</a></li>
+            <li><a href="index.html#tecnologias">Tecnologías</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Empresa</h3>
+          <ul>
+            <li><a href="about-us.html">Sobre nosotros</a></li>
+            <li><a href="contact.html">Contacto</a></li>
+            <li><a href="privacy-policy.html">Política de privacidad</a></li>
+            <li><a href="terms-of-use.html">Términos de uso</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Síguenos</h3>
+          <div class="social-icons">
+            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+            <a href="#" class="youtube"><i class="bx bxl-youtube"></i></a>
+          </div>
+          <div class="subscribe">
+            <p>Suscríbete a nuestro boletín</p>
+            <form id="subscribe-form">
+              <input type="email" placeholder="Tu correo electrónico" required>
+              <button type="submit"><i class="bx bxs-paper-plane"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Noticias Internacionales. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="boton-ir-arriba" class="boton-ir-arriba">
+    <i class="bx bx-up-arrow-alt"></i>
+  </button>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

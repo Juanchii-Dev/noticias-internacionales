@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - Noticias Internacionales</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    .contact-container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: var(--color-fondo-tarjeta-light);
+      border-radius: var(--radio-tarjeta);
+      box-shadow: var(--sombra-tarjeta);
+    }
+    
+    body.dark .contact-container {
+      background-color: var(--color-fondo-tarjeta-dark);
+    }
+    
+    .contact-container h1 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      text-align: center;
+    }
+    
+    .contact-container p {
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+    
+    .contact-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+    
+    .contact-info {
+      padding-right: 2rem;
+    }
+    
+    .contact-info h2 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+    
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+    
+    .info-item i {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-right: 1rem;
+    }
+    
+    .info-text h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+    
+    .info-text p {
+      margin-bottom: 0;
+      color: var(--dark-0);
+    }
+    
+    body.dark .info-text p {
+      color: var(--light-1);
+    }
+    
+    .contact-form h2 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid var(--light-2);
+      border-radius: 5px;
+      background-color: var(--light-0);
+      color: var(--dark-1);
+      font-family: var(--font-secundaria);
+      transition: border-color var(--transicion-rapida), box-shadow var(--transicion-rapida);
+    }
+    
+    body.dark .form-group input,
+    body.dark .form-group textarea {
+      background-color: var(--dark-1);
+      border-color: var(--dark-0);
+      color: var(--light-0);
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--primary);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(41, 57, 255, 0.2);
+    }
+    
+    .form-group textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    .submit-btn {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      font-family: var(--font-principal);
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color var(--transicion-rapida), transform var(--transicion-rapida);
+    }
+    
+    .submit-btn:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-3px);
+    }
+    
+    .submit-btn:active {
+      transform: translateY(0);
+    }
+    
+    .map-container {
+      margin-top: 3rem;
+      border-radius: var(--radio-tarjeta);
+      overflow: hidden;
+      height: 400px;
+      box-shadow: var(--sombra-tarjeta);
+    }
+    
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    
+    .faq-section {
+      margin-top: 3rem;
+    }
+    
+    .faq-section h2 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    
+    .faq-item {
+      margin-bottom: 1.5rem;
+      padding: 1.5rem;
+      background-color: var(--light-0);
+      border-radius: var(--radio-tarjeta);
+      border-left: 4px solid var(--primary);
+      transition: transform var(--transicion-rapida), box-shadow var(--transicion-rapida);
+    }
+    
+    body.dark .faq-item {
+      background-color: var(--dark-1);
+    }
+    
+    .faq-item:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--sombra-tarjeta-hover);
+    }
+    
+    .faq-question {
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--primary);
+    }
+    
+    .faq-answer {
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+    
+    .back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color var(--transicion-rapida);
+    }
+    
+    .back-link:hover {
+      color: var(--primary-light);
+    }
+    
+    .back-link i {
+      margin-right: 0.5rem;
+    }
+    
+    /* Efecto de carga para el formulario */
+    .form-success-message {
+      display: none;
+      padding: 1rem;
+      background-color: rgba(40, 167, 69, 0.2);
+      border-left: 4px solid #28a745;
+      border-radius: 5px;
+      margin-top: 1rem;
+    }
+    
+    @media (max-width: 768px) {
+      .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .contact-info {
+        padding-right: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header">
+      <div class="logo">
+        <a href="index.html">
+          <i class="bx bx-news text-3xl"></i>
+          <span class="font-poppins font-bold text-xl">Noticias Internacionales</span>
+        </a>
+      </div>
+      
+      <!-- Botón menú hamburguesa para móviles -->
+      <button class="menu-toggle" aria-label="Abrir menú">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      
+      <nav class="menu-principal">
+        <ul class="menu-lista">
+          <li class="menu-item"><a href="index.html">Inicio</a></li>
+          <li class="menu-item"><a href="index.html#noticias">Noticias</a></li>
+          <li class="menu-item"><a href="index.html#deportes">Deportes</a></li>
+          <li class="menu-item"><a href="index.html#tecnologias">Tecnologías</a></li>
+          <li class="menu-item"><a href="contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+      
+      <div class="dark-mode-toggle">
+        <input id="toggle-button" type="checkbox">
+        <label for="toggle-button">
+          <div class="sun-moon"></div>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="contact-container">
+      <h1>Contacto</h1>
+      <p>¿Tienes alguna pregunta, sugerencia o quieres colaborar con nosotros? Estamos aquí para escucharte. Utiliza cualquiera de los siguientes canales para ponerte en contacto con nuestro equipo.</p>
+      
+      <div class="contact-content">
+        <div class="contact-info">
+          <h2>Información de Contacto</h2>
+          
+          <div class="info-item">
+            <i class="bx bx-envelope"></i>
+            <div class="info-text">
+              <h3>Email</h3>
+              <p>info@noticiasinternacionales.com</p>
+              <p>redaccion@noticiasinternacionales.com</p>
+            </div>
+          </div>
+          
+          <div class="info-item">
+            <i class="bx bx-phone"></i>
+            <div class="info-text">
+              <h3>Teléfono</h3>
+              <p>+34 912 345 678</p>
+              <p>Lunes a Viernes: 9:00 - 18:00</p>
+            </div>
+          </div>
+          
+          <div class="info-item">
+            <i class="bx bx-map"></i>
+            <div class="info-text">
+              <h3>Dirección</h3>
+              <p>Avenida de la Prensa, 123</p>
+              <p>28001 Madrid, España</p>
+            </div>
+          </div>
+          
+          <div class="info-item">
+            <i class="bx bx-time"></i>
+            <div class="info-text">
+              <h3>Horario de Atención</h3>
+              <p>Lunes a Viernes: 9:00 - 18:00</p>
+              <p>Sábados: 10:00 - 14:00</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-form">
+          <h2>Envíanos un Mensaje</h2>
+          <form id="contact-form">
+            <div class="form-group">
+              <label for="name">Nombre</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Asunto</label>
+              <input type="text" id="subject" name="subject" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Mensaje</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Enviar Mensaje</button>
+          </form>
+          <div class="form-success-message" id="success-message">
+            ¡Gracias por tu mensaje! Te responderemos lo antes posible.
+          </div>
+        </div>
+      </div>
+      
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12147.337006409366!2d-3.6930044765498386!3d40.42428422642286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42289ff511827d%3A0x9e6c8d8d10665435!2sMadrid%2C%20Spain!5e0!3m2!1sen!2sus!4v1616608019117!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+      
+      <div class="faq-section">
+        <h2>Preguntas Frecuentes</h2>
+        
+        <div class="faq-item">
+          <div class="faq-question">¿Cómo puedo suscribirme al boletín de noticias?</div>
+          <div class="faq-answer">Para suscribirte a nuestro boletín de noticias, simplemente introduce tu dirección de correo electrónico en el formulario de suscripción que encontrarás en el pie de página de nuestro sitio web. Recibirás un correo de confirmación para completar el proceso.</div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">¿Cómo puedo reportar un error en una noticia?</div>
+          <div class="faq-answer">Si has encontrado un error en alguna de nuestras noticias, puedes notificárnoslo a través del formulario de contacto en esta página, indicando en el asunto "Error en noticia" y proporcionando todos los detalles posibles. También puedes enviarnos un correo a correccion@noticiasinternacionales.com.</div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">¿Aceptan colaboraciones o artículos de opinión?</div>
+          <div class="faq-answer">Sí, estamos abiertos a recibir colaboraciones y artículos de opinión. Si estás interesado/a en contribuir, envíanos un correo a colaboraciones@noticiasinternacionales.com con una breve descripción de tu propuesta y ejemplos de tu trabajo anterior.</div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">¿Cómo puedo anunciarme en su sitio web?</div>
+          <div class="faq-answer">Para información sobre oportunidades publicitarias, por favor contacta con nuestro departamento comercial a través de publicidad@noticiasinternacionales.com o llama al +34 912 345 679.</div>
+        </div>
+      </div>
+      
+      <a href="index.html" class="back-link"><i class="bx bx-arrow-back"></i>Volver a la página principal</a>
+    </div>
+  </main>
+  
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <i class="bx bx-news"></i>
+        <span>Noticias Internacionales</span>
+      </div>
+      <div class="footer-links">
+        <div class="footer-section">
+          <h3>Secciones</h3>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html#noticias">Noticias</a></li>
+            <li><a href="index.html#deportes">Deportes</a></li>
+            <li><a href="index.html#tecnologias">Tecnologías</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Empresa</h3>
+          <ul>
+            <li><a href="about-us.html">Sobre nosotros</a></li>
+            <li><a href="contact.html">Contacto</a></li>
+            <li><a href="privacy-policy.html">Política de privacidad</a></li>
+            <li><a href="terms-of-use.html">Términos de uso</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Síguenos</h3>
+          <div class="social-icons">
+            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+            <a href="#" class="youtube"><i class="bx bxl-youtube"></i></a>
+          </div>
+          <div class="subscribe">
+            <p>Suscríbete a nuestro boletín</p>
+            <form id="subscribe-form">
+              <input type="email" placeholder="Tu correo electrónico" required>
+              <button type="submit"><i class="bx bxs-paper-plane"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Noticias Internacionales. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="boton-ir-arriba" class="boton-ir-arriba">
+    <i class="bx bx-up-arrow-alt"></i>
+  </button>
+
+  <script src="js/script.js"></script>
+  <script>
+    // Script adicional para el formulario de contacto
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // En un sitio real, aquí iría el código para enviar el formulario al servidor
+      // Por ahora, simplemente simularemos que se envió correctamente
+      
+      // Simulamos un tiempo de carga
+      const submitBtn = this.querySelector('.submit-btn');
+      const successMessage = document.getElementById('success-message');
+      
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando...';
+      
+      setTimeout(() => {
+        // Mostrar mensaje de éxito
+        successMessage.style.display = 'block';
+        
+        // Resetear el formulario
+        this.reset();
+        
+        // Restaurar el botón
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Enviar Mensaje';
+        
+        // Ocultar el mensaje después de 5 segundos
+        setTimeout(() => {
+          successMessage.style.display = 'none';
+        }, 5000);
+      }, 1500);
+    });
+  </script>
+</body>
+</html>

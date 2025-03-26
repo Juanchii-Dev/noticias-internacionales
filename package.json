@@ -1,0 +1,19 @@
+{
+  "name": "my-web-project",
+  "version": "1.0.0",
+  "description": "A modern web application built with JavaScript/TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "start": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.6.5",
+  "devDependencies": {
+    "vite": "^6.2.3"
+  }
+}

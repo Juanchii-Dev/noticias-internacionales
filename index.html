@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noticias Internacionales</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="search-container">
+        <form id="search-form">
+          <input type="text" placeholder="Buscar noticias..." required>
+          <button type="submit"><i class="bx bx-search"></i></button>
+        </form>
+      </div>
+    </div>
+
+    <div class="header">
+      <div class="logo">
+        <i class="bx bx-news text-3xl"></i>
+        <span class="font-poppins font-bold text-xl">Noticias Internacionales</span>
+      </div>
+
+      <!-- Botón menú hamburguesa para móviles -->
+      <button class="menu-toggle" aria-label="Abrir menú">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <nav class="menu-principal">
+        <ul class="menu-lista">
+          <li class="menu-item"><a href="index.html">Inicio</a></li>
+          <li class="menu-item"><a href="#noticias">Noticias</a></li>
+          <li class="menu-item"><a href="#deportes">Deportes</a></li>
+          <li class="menu-item"><a href="#tecnologias">Tecnologías</a></li>
+          <li class="menu-item"><a href="contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+      
+      <div class="dark-mode-toggle">
+        <input id="toggle-button" type="checkbox">
+        <label for="toggle-button">
+          <div class="sun-moon"></div>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="noticias" class="noticias">
+      <h2>Noticias Generales</h2>
+      <div class="noticias-container">
+        <div class="noticia card-3d">
+          <div class="card-3d-inner">
+            <a href="protestas-francia.html">
+              <div class="img-zoom-container">
+                <img src="https://images.unsplash.com/photo-1493997575474-58d1db687da3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvdGVzdGFzJTIwZW4lMjBmcmFuY2lhfGVufDB8fDB8fHww" alt="Protestas en Francia por reforma de pensiones" class="img-zoom">
+              </div>
+              <div class="categoria">Internacional</div>
+              <div class="contenido">
+                <h3>Protestas en Francia por reforma de pensiones</h3>
+                <p>Miles de personas se manifiestan en París contra la reforma de pensiones propuesta por el gobierno.</p>
+                <!-- Botones para compartir -->
+                      <div class="share-buttons">
+                        <span>Compartir: </span>
+                        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                        <a href="#" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
+                        <a href="#" class="telegram"><i class="bx bxl-telegram"></i></a>
+                        <a href="#" class="email"><i class="bx bx-envelope"></i></a>
+                      </div>
+                <div class="tiempo">Hace 2 horas</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="noticia card-3d">
+          <div class="card-3d-inner">
+            <a href="tension-ucrania-rusia.html">
+              <div class="img-zoom-container">
+                <img src="https://images.unsplash.com/photo-1704971152660-b56fcd93c04d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dWNyYW5pYSUyMHklMjBydXNpYSUyMGd1ZXJyYXxlbnwwfHwwfHx8MA%3D%3D" alt="Tensión en la frontera entre Ucrania y Rusia" class="img-zoom">
+              </div>
+              <div class="categoria conflicto">Conflicto</div>
+              <div class="contenido">
+                <h3>Tensión en la frontera entre Ucrania y Rusia</h3>
+                <p>Aumenta la tensión en la frontera entre Ucrania y Rusia por la acumulación de tropas rusas.</p>
+                
+                <!-- Botones para compartir -->
+                      <div class="share-buttons">
+                        <span>Compartir: </span>
+                        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                        <a href="#" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
+                        <a href="#" class="telegram"><i class="bx bxl-telegram"></i></a>
+                        <a href="#" class="email"><i class="bx bx-envelope"></i></a>
+                      </div>
+                <div class="tiempo">Hace 5 horas</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="noticia card-3d">
+          <div class="card-3d-inner">
+            <a href="acuerdo-nuclear-iran.html">
+              <div class="img-zoom-container">
+                <img src="https://images.unsplash.com/photo-1519589863-f02030e7127e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fEJhbmRlcmFzJTIwZGUlMjBsb3MlMjBwYSVDMyVBRHNlcyUyMGludm9sdWNyYWRvc3xlbnwwfHwwfHx8MA%3D%3D" alt="Nuevo acuerdo nuclear con Irán" class="img-zoom">
+              </div>
+              <div class="categoria diplomacia">Diplomacia</div>
+              <div class="contenido">
+                <h3>Nuevo acuerdo nuclear con Irán</h3>
+                <p>Se reanudan las negociaciones para un nuevo acuerdo nuclear con Irán.</p>
+                <!-- Botones para compartir -->
+                <div class="share-buttons">
+                  <span>Compartir: </span>
+                  <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                  <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                  <a href="#" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
+                  <a href="#" class="telegram"><i class="bx bxl-telegram"></i></a>
+                  <a href="#" class="email"><i class="bx bx-envelope"></i></a>
+                </div>
+                <div class="tiempo">Hace 1 día</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="deportes" class="noticias">
+      <h2>Deportes</h2>
+      <div class="noticias-container">
+        <div class="noticia card-3d">
+          <div class="card-3d-inner">
+            <a href="real-madrid-champions.html">
+              <div class="img-zoom-container">
+                <img src="https://images.unsplash.com/photo-1550881111-7cfde14b8073?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Real Madrid gana la Champions League" class="img-zoom">
+              </div>
+              <div class="categoria futbol">Fútbol</div>
+              <div class="contenido">
+                <h3>Real Madrid gana la Champions League</h3>
+                <p>El Real Madrid se consagra campeón de la Champions League tras vencer al Liverpool.</p>
+                <!-- Botones para compartir -->
+                <div class="share-buttons">
+                  <span>Compartir: </span>
+                  <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                  <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                  <a href="#" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
+                  <a href="#" class="telegram"><i class="bx bxl-telegram"></i></a>
+                  <a href="#" class="email"><i class="bx bx-envelope"></i></a>
+                </div>
+                <div class="tiempo">Hace 6 horas</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="noticia card-3d">
+          <div class="card-3d-inner">
+            <a href="djokovic-australia.html">
+              <div class="img-zoom-container">
+                <img src="https://plus.unsplash.com/premium_photo-1713836956177-d56356c9eb3c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8VW5hJTIwaW1hZ2VuJTIwZGVsJTIwdGVuaXN0YSUyMGRqb2tvdmljJTIwbGV2YW50YW5kbyUyMGVsJTIwdHJvZmVvfGVufDB8fDB8fHww" alt="Djokovic gana el Abierto de Australia" class="img-zoom">
+              </div>
+              <div class="categoria tenis">Tenis</div>
+              <div class="contenido">
+                <h3>Djokovic gana el Abierto de Australia</h3>
+                <p>Novak Djokovic conquista el Abierto de Australia por décima vez en su carrera.</p>
+                <!-- Botones para compartir -->
+                <div class="share-buttons">
+                  <span>Compartir: </span>
+                  <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                  <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                  <a href="#" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
+                  <a href="#" class="telegram"><i class="bx bxl-telegram"></i></a>
+                  <a href="#" class="email"><i class="bx bx-envelope"></i></a>
+                </div>
+                <div class="tiempo">Hace 1 día</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="noticia card-3d">
+          <div class="card-3d-inner">
+            <a href="argentina-mundial.html">
+              <div class="img-zoom-container">
+                <img src="https://www.viapais.com.ar/resizer/v2/VJZLOJTGUBEW5DUA7NZCLCU7FU.jpeg?smart=true&auth=bf2e50106eda4ca5f86a1970f770c4bff24b2a8b7b11324e66c10ee683360d16" alt="Selección Argentina clasifica al Mundial" class="img-zoom">
+              </div>
+              <div class="categoria futbol">Fútbol</div>
+              <div class="contenido">
+                <h3>Selección Argentina clasifica al Mundial</h3>
+                <p>La selección Argentina de fútbol asegura su clasificación al Mundial 2026.</p>
+                <!-- Botones para compartir -->
+                <div class="share-buttons">
+                  <span>Compartir: </span>
+                  <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                  <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                  <a href="#" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
+                  <a href="#" class="telegram"><i class="bx bxl-telegram"></i></a>
+                  <a href="#" class="email"><i class="bx bx-envelope"></i></a>
+                </div>
+                <div class="tiempo">Hace 3 días</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="noticia card-3d">
+          <div class="card-3d-inner">
+            <a href="hamilton-mercedes.html">
+              <div class="img-zoom-container">
+                <img src="https://e0.365dm.com/16/09/1600x900/lewis-hamilton-mclaren-2006-test_3788883.jpg?20160918120917" alt="Lewis Hamilton renueva con Mercedes" class="img-zoom">
+              </div>
+              <div class="categoria f1">F1</div>
+              <div class="contenido">
+                <h3>Lewis Hamilton renueva con Mercedes</h3>
+                <p>Lewis Hamilton firma un nuevo contrato con la escudería Mercedes de Fórmula 1.</p>
+                <div class="tiempo">Hace 2 días</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="noticia card-3d">
+          <div class="card-3d-inner">
+            <a href="usain-bolt-retiro.html">
+              <div class="img-zoom-container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Bolt_se_aposenta_com_medalha_de_ouro_no_4_x_100_metros_1039119-19.08.2016_frz-9613.jpg/300px-Bolt_se_aposenta_com_medalha_de_ouro_no_4_x_100_metros_1039119-19.08.2016_frz-9613.jpg" alt="Usain Bolt anuncia su retiro definitivo" class="img-zoom">
+              </div>
+              <div class="categoria atletismo">Atletismo</div>
+              <div class="contenido">
+                <h3>Usain Bolt anuncia su retiro definitivo</h3>
+                <p>El legendario velocista Usain Bolt anuncia su retiro definitivo del atletismo.</p>
+                <div class="tiempo">Hace 4 días</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tecnologias" class="noticias">
+      <h2>Tecnologías</h2>
+      <div class="noticias-container">
+        <div class="noticia card-3d">
+          <div class="card-3d-inner">
+            <a href="iphone-17-lanzamiento.html">
+              <div class="img-zoom-container">
+                <img src="https://images.unsplash.com/photo-1592179900431-1e021ea53b28?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Apple presenta su nuevo iPhone 17" class="img-zoom">
+              </div>
+              <div class="categoria gadgets">Gadgets</div>
+              <div class="contenido">
+                <h3>Apple presenta su nuevo iPhone 17</h3>
+                <p>Apple lanza al mercado el esperado iPhone 17 con importantes mejoras en la cámara y el procesador.</p>
+                <div class="tiempo">Hace 12 horas</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="noticia card-3d">
+          <div class="card-3d-inner">
+            <a href="ia-medicina.html">
+              <div class="img-zoom-container">
+                <img src="https://media.istockphoto.com/id/2155835284/es/foto/imagen-generada-digitalmente-de-un-cerebro-humano-con-inteligencia-artificial-sobre-una-placa.webp?a=1&b=1&s=612x612&w=0&k=20&c=Lj2hXiNOKnQH7bz2FCIFGH1d9gb1QcOsao2EI4LLvxE=" alt="Inteligencia Artificial revoluciona la medicina" class="img-zoom">
+              </div>
+              <div class="categoria ia">IA</div>
+              <div class="contenido">
+                <h3>Inteligencia Artificial revoluciona la medicina</h3>
+                <p>La Inteligencia Artificial está transformando el diagnóstico y tratamiento de enfermedades.</p>
+                <div class="tiempo">Hace 1 día</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="noticia card-3d">
+          <div class="card-3d-inner">
+            <a href="metaverso-usuarios.html">
+              <div class="img-zoom-container">
+                <img src="https://plus.unsplash.com/premium_photo-1710909338459-fd74fb62235b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8SW1hZ2VuJTIwZGUlMjBwZXJzb25hcyUyMHV0aWxpemFuZG8lMjBnYWZhcyUyMGRlJTIwcmVhbGlkYWQlMjB2aXJ0dWFsJTIwKFZSKSUyMG8lMjByZWFsaWRhZCUyMGF1bWVudGFkYXxlbnwwfHwwfHx8MA%3D%3D" alt="Metaverso alcanza los mil millones de usuarios" class="img-zoom">
+              </div>
+              <div class="categoria vr">VR/AR</div>
+              <div class="contenido">
+                <h3>Metaverso alcanza los mil millones de usuarios</h3>
+                <p>El Metaverso supera los mil millones de usuarios activos a nivel mundial.</p>
+                <div class="tiempo">Hace 2 días</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="noticia card-3d">
+          <div class="card-3d-inner">
+            <a href="bateria-litio-nueva.html">
+              <div class="img-zoom-container">
+                <img src="https://images.unsplash.com/photo-1513267048331-5611cad62e41?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Científicos crean batería de litio de nueva generación" class="img-zoom">
+              </div>
+              <div class="categoria energia">Energía</div>
+              <div class="contenido">
+                <h3>Científicos crean batería de litio de nueva generación</h3>
+                <p>Científicos desarrollan una batería de litio con mayor duración y menor tiempo de carga.</p>
+                <div class="tiempo">Hace 3 días</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="noticia card-3d">
+          <div class="card-3d-inner">
+            <a href="elon-musk-chip.html">
+              <div class="img-zoom-container">
+                <img src="https://img.freepik.com/fotos-premium/circuitos-cerebrales-chip-cerebral-cyborg-hembra-cerebro-brillante-piezas-mecanicas-expuestas-vitrina_981101-119405.jpg" alt="Elon Musk anuncia nuevo chip cerebral" class="img-zoom">
+              </div>
+              <div class="categoria biotech">Biotech</div>
+              <div class="contenido">
+                <h3>Elon Musk anuncia nuevo chip cerebral</h3>
+                <p>Elon Musk presenta un nuevo chip cerebral con capacidades sorprendentes.</p>
+                <div class="tiempo">Hace 5 días</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <i class="bx bx-news"></i>
+        <span>Noticias Internacionales</span>
+      </div>
+      <div class="footer-links">
+        <div class="footer-section">
+          <h3>Secciones</h3>
+          <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#noticias">Noticias</a></li>
+            <li><a href="#deportes">Deportes</a></li>
+            <li><a href="#tecnologias">Tecnologías</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Empresa</h3>
+          <ul>
+            <li><a href="about-us.html">Sobre nosotros</a></li>
+            <li><a href="contact.html">Contacto</a></li>
+            <li><a href="privacy-policy.html">Política de privacidad</a></li>
+            <li><a href="terms-of-use.html">Términos de uso</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Síguenos</h3>
+          <div class="social-icons">
+            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+            <a href="#" class="youtube"><i class="bx bxl-youtube"></i></a>
+          </div>
+          <div class="subscribe">
+            <p>Suscríbete a nuestro boletín</p>
+            <form id="subscribe-form">
+              <input type="email" placeholder="Tu correo electrónico" required>
+              <button type="submit"><i class="bx bxs-paper-plane"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Noticias Internacionales. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="boton-ir-arriba" class="boton-ir-arriba">
+    <i class="bx bx-up-arrow-alt"></i>
+  </button>
+
+  <script src="js/script.js"></script>
+
+  <script src="js/features.js"></script>
+  
+</body>
+</html>
