@@ -196,6 +196,18 @@ function toggleFavorite(title, button) {
         button.classList.remove('active');
         button.innerHTML = '<i class="bx bx-heart"></i>';
         
+        // Actualizar todos los botones de favoritos con el mismo título
+        document.querySelectorAll('.noticia').forEach(noticia => {
+            const noticiaTitle = noticia.querySelector('h3').textContent;
+            if (noticiaTitle === title) {
+                const favBtn = noticia.querySelector('.fav-button');
+                if (favBtn) {
+                    favBtn.classList.remove('active');
+                    favBtn.innerHTML = '<i class="bx bx-heart"></i>';
+                }
+            }
+        });
+        
         // Remove from favorites section with animation
         const favoritesContainer = document.getElementById('favoritos-container');
         if (favoritesContainer) {
@@ -359,6 +371,54 @@ function showFullArticle(noticia) {
     
     // Generar contenido completo basado en el título
     switch(title) {
+        case 'Nueva generación de procesadores':
+            fullContent = `
+                <h1>${title}</h1>
+                <p class="article-meta">Por David Chang | Actualizado: 16 de Abril, 2024</p>
+                <div class="article-content">
+                    <p>Intel y AMD han anunciado simultáneamente sus nuevas líneas de procesadores que prometen revolucionar el mercado de la computación. Los nuevos chips utilizan tecnología de 3nm y ofrecen mejoras significativas en rendimiento y eficiencia energética.</p>
+                    <h2>Innovaciones Tecnológicas</h2>
+                    <p>Los nuevos procesadores incorporan arquitecturas revolucionarias que permiten un incremento del 40% en rendimiento mientras reducen el consumo energético en un 30%. La integración de núcleos especializados en IA promete acelerar significativamente las tareas de machine learning.</p>
+                    <h2>Impacto en el Mercado</h2>
+                    <p>Analistas predicen que estos avances podrían transformar significativamente el panorama de la computación personal y profesional. Se espera que los primeros dispositivos con estos procesadores lleguen al mercado en el último trimestre del año.</p>
+                </div>`;
+            break;
+        case 'Descubrimiento arqueológico en Egipto':
+            fullContent = `
+                <h1>${title}</h1>
+                <p class="article-meta">Por Ahmed Kamal | Actualizado: 15 de Abril, 2024</p>
+                <div class="article-content">
+                    <p>Un equipo internacional de arqueólogos ha descubierto una nueva tumba en el Valle de los Reyes que podría pertenecer a un faraón hasta ahora desconocido. El hallazgo incluye numerosos artefactos bien preservados y jeroglíficos que podrían reescribir parte de la historia del Antiguo Egipto.</p>
+                    <h2>Detalles del Descubrimiento</h2>
+                    <p>La tumba, que permanecía sellada desde hace más de 3,000 años, contiene una colección extraordinaria de joyas, estatuas y papiros. Los jeroglíficos sugieren la existencia de un breve período dinástico no documentado previamente.</p>
+                    <h2>Implicaciones Históricas</h2>
+                    <p>Este descubrimiento podría llenar importantes vacíos en nuestra comprensión de la historia del Antiguo Egipto, especialmente durante el período de transición entre la XVIII y XIX dinastía.</p>
+                </div>`;
+            break;
+        case 'Avances en medicina regenerativa':
+            fullContent = `
+                <h1>${title}</h1>
+                <p class="article-meta">Por Dr. Elena Rodríguez | Actualizado: 16 de Abril, 2024</p>
+                <div class="article-content">
+                    <p>Investigadores han logrado un avance significativo en medicina regenerativa al desarrollar un nuevo método para imprimir tejidos orgánicos en 3D que son completamente funcionales y compatibles con el cuerpo humano.</p>
+                    <h2>Tecnología Innovadora</h2>
+                    <p>La nueva técnica utiliza una combinación de células madre y biomateriales especialmente diseñados que permiten la creación de tejidos complejos con su propia red de vasos sanguíneos.</p>
+                    <h2>Aplicaciones Médicas</h2>
+                    <p>Este avance podría revolucionar el campo de los trasplantes de órganos y el tratamiento de lesiones graves. Los primeros ensayos clínicos están programados para comenzar el próximo año.</p>
+                </div>`;
+            break;
+        case 'Exploración espacial':
+            fullContent = `
+                <h1>${title}</h1>
+                <p class="article-meta">Por Carlos Vega | Actualizado: 15 de Abril, 2024</p>
+                <div class="article-content">
+                    <p>La NASA ha anunciado planes ambiciosos para establecer una base permanente en la Luna para 2030, que servirá como punto de partida para futuras misiones tripuladas a Marte.</p>
+                    <h2>Detalles del Proyecto</h2>
+                    <p>La base lunar, denominada "Artemis Base Camp", será construida utilizando recursos locales y tecnología de impresión 3D. Se diseñará para albergar hasta 8 astronautas por períodos de hasta 6 meses.</p>
+                    <h2>Colaboración Internacional</h2>
+                    <p>El proyecto cuenta con la participación de múltiples agencias espaciales y empresas privadas, marcando una nueva era en la colaboración espacial internacional.</p>
+                </div>`;
+            break;
         case 'Descubrimientos en inteligencia artificial':
             fullContent = `
                 <h1>${title}</h1>
